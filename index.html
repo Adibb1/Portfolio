@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth no-scrollbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adib</title>
+    <link rel="icon" href="assets/logo.svg" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/input.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <!-- ###################################################################### -->
+  <!-- FOR PROJECT -->
+  <style>
+    @media (min-width: 1024px) {
+      .wrapper-achievement {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+      }
+
+      .container-achievement {
+        height: 400px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+      }
+      .test-achievement {
+        height: 400px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+        perspective: 500px;
+      }
+
+      .card-achievement {
+        width: 80px;
+        border-radius: 0.75rem;
+        background-size: cover;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 2rem;
+        margin: 0 10px;
+        display: flex;
+        align-items: flex-end;
+        transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+        box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+        transform-style: preserve-3d;
+        transition: 0.1s;
+      }
+
+      .card-achievement > .row-achievement {
+        display: flex;
+        flex-wrap: nowrap;
+        transform-style: preserve-3d;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .card-achievement > .row-achievement > .icon-achievement {
+        background: #223;
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+      }
+
+      .card-achievement > .row-achievement > .description-achievement {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+        height: 80px;
+        width: 520px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition-delay: 0.3s;
+        transition: all 0.3s ease;
+      }
+
+      .description-achievement p {
+        color: white;
+        padding-top: 5px;
+        width: 100%;
+      }
+
+      .description-achievement h4 {
+        text-transform: uppercase;
+        color: #f4f3ee;
+        font: bold;
+      }
+
+      .input-achievement {
+        display: none;
+      }
+
+      .input-achievement:checked + .card-achievement {
+        width: 600px;
+      }
+
+      .input-achievement:checked + .card-achievement .description-achievement {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      .card-achievement[for="c1"] {
+        background-image: url("./assets/pcep.png");
+      }
+      .card-achievement[for="c2"] {
+        background-image: url("./assets/siic.png");
+      }
+      .card-achievement[for="c3"] {
+        background-image: url("./assets/levelup.png");
+      }
+      .card-achievement[for="c4"] {
+        background-image: url("./assets/dbhero.png");
+      }
+    }
+    @media (max-width: 1023px) {
+      .wrapper-achievement {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+      }
+
+      .container-achievement {
+        height: 400px;
+        width: 80%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+      }
+      .test-achievement {
+        height: 400px;
+        width: 130%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        perspective: 200px;
+      }
+
+      .card-achievement {
+        width: 80px;
+        border-radius: 0.75rem;
+        background-size: cover;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 2rem;
+        margin: 0 10px;
+        display: flex;
+        align-items: flex-end;
+        transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+        box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+        transform-style: preserve-3d;
+        transition: 0.1s;
+      }
+
+      .card-achievement > .row-achievement {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .card-achievement > .row-achievement > .icon-achievement {
+        background: #223;
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+      }
+
+      .card-achievement > .row-achievement > .description-achievement {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+        height: 80px;
+        width: 520px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition-delay: 0.3s;
+        transition: all 0.3s ease;
+      }
+
+      .description-achievement p {
+        color: white;
+        padding-top: 5px;
+        width: 100%;
+      }
+
+      .description-achievement h4 {
+        text-transform: uppercase;
+        color: #f4f3ee;
+        font: bold;
+      }
+
+      .input-achievement {
+        display: none;
+      }
+
+      .input-achievement:checked + .card-achievement {
+        width: 400px;
+      }
+
+      .input-achievement:checked + .card-achievement .description-achievement {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      .card-achievement[for="c1"] {
+        background-image: url("./assets/pcep.png");
+        background-position: center;
+      }
+      .card-achievement[for="c2"] {
+        background-image: url("./assets/siic.png");
+        background-position: center;
+      }
+      .card-achievement[for="c3"] {
+        background-image: url("./assets/levelup.png");
+        background-position: center;
+      }
+      .card-achievement[for="c4"] {
+        background-image: url("./assets/dbhero.png");
+        background-position: center;
+      }
+    }
+    @media (max-width: 767px) {
+      .wrapper-achievement {
+        width: 100%;
+        min-height: 130vh;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+      }
+
+      .container-achievement {
+        height: 550px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+      .test-achievement-sm {
+        height: 550px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .card-achievement {
+        width: 100%;
+        height: 100px;
+        border-radius: 0.75rem;
+        background-size: cover;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 2rem;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+        box-shadow: 10px 10px 20px -5px rgba(0, 0, 0, 0.8);
+      }
+
+      .card-achievement > .row-achievement {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+      }
+
+      .card-achievement > .row-achievement > .icon-achievement {
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 50px;
+      }
+      .card-achievement > .row-achievement > .icon-achievement2 {
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 200px;
+      }
+
+      .card-achievement > .row-achievement > .description-achievement {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+        height: 80px;
+        width: 520px;
+        opacity: 1;
+        transform: translateY(0) !important;
+        transition-delay: 0.3s;
+        transition: all 0.3s ease;
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+
+      .description-achievement p {
+        color: white;
+        padding-top: 5px;
+      }
+
+      .description-achievement h4 {
+        text-transform: uppercase;
+        color: #f4f3ee;
+        font: bold;
+      }
+
+      .input-achievement {
+        display: none;
+      }
+
+      .input-achievement:checked + .card-achievement {
+        width: 100%;
+        height: 300px;
+      }
+
+      .card-achievement[for="c1"] {
+        background-image: url("./assets/pcep.png");
+        background-position: center;
+      }
+      .card-achievement[for="c2"] {
+        background-image: url("./assets/siic.png");
+        background-position: center;
+      }
+      .card-achievement[for="c3"] {
+        background-image: url("./assets/levelup.png");
+        background-position: center;
+      }
+      .card-achievement[for="c4"] {
+        background-image: url("./assets/dbhero.png");
+        background-position: center;
+      }
+    }
+  </style>
+  <!-- FOR WAVE EFFECT -->
+  <style>
+    .waves-wave {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      margin-bottom: -7px; /*Fix for safari gap*/
+      min-height: 100px;
+      max-height: 150px;
+      background-color: transparent;
+    }
+
+    .content-wave {
+      position: relative;
+      height: 20vh;
+      text-align: center;
+    }
+
+    /* Animation */
+
+    .parallax-wave > use {
+      animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+    }
+    .parallax-wave > use:nth-child(1) {
+      animation-delay: -2s;
+      animation-duration: 7s;
+    }
+    .parallax-wave > use:nth-child(2) {
+      animation-delay: -3s;
+      animation-duration: 10s;
+    }
+    .parallax-wave > use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 13s;
+    }
+    .parallax-wave > use:nth-child(4) {
+      animation-delay: -5s;
+      animation-duration: 20s;
+    }
+    @keyframes move-forever {
+      0% {
+        transform: translate3d(-90px, 0, 0);
+      }
+      100% {
+        transform: translate3d(85px, 0, 0);
+      }
+    }
+    /*Shrinking for mobile*/
+    @media (max-width: 768px) {
+      .waves-wave {
+        position: relative;
+        height: 50px;
+        min-height: 40px;
+        background-color: #bcb8b1;
+      }
+    }
+  </style>
+  <!-- FOR SKILLS -->
+  <style>
+    .inner {
+      box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+        0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+        0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    }
+    .circle1 {
+      fill: none;
+      stroke: url(#GradientColor1);
+      stroke-width: 20px;
+      stroke-dasharray: 472;
+      stroke-dashoffset: 472;
+      animation: progressBar1 2s linear forwards;
+    }
+    .circle2 {
+      fill: none;
+      stroke: url(#GradientColor2);
+      stroke-width: 20px;
+      stroke-dasharray: 472;
+      stroke-dashoffset: 472;
+      animation: progressBar2 2s linear forwards;
+    }
+    .circle3 {
+      fill: none;
+      stroke: url(#GradientColor3);
+      stroke-width: 20px;
+      stroke-dasharray: 472;
+      stroke-dashoffset: 472;
+      animation: progressBar3 2s linear forwards;
+    }
+    .circle4 {
+      fill: none;
+      stroke: url(#GradientColor4);
+      stroke-width: 20px;
+      stroke-dasharray: 472;
+      stroke-dashoffset: 472;
+      animation: progressBar4 2s linear forwards;
+    }
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    @keyframes progressBar1 {
+      100% {
+        stroke-dashoffset: 60.2;
+      }
+    }
+    @keyframes progressBar2 {
+      100% {
+        stroke-dashoffset: 141.6;
+      }
+    }
+    @keyframes progressBar3 {
+      100% {
+        stroke-dashoffset: 283.2;
+      }
+    }
+    @keyframes progressBar4 {
+      100% {
+        stroke-dashoffset: 141.6;
+      }
+    }
+  </style>
+  <!-- FOR HOBBY -->
+
+  <!-- ####################################################################### -->
+  <body
+    class="font-[Varela Round] bg-[#F4F3EE] h-fit text-[#463F3A] box-border overflow-x-hidden scrollbar-hide antialiased"
+  >
+    <!-- NAVBAR -->
+    <nav
+      id="navbar"
+      class="flex justify-end md:justify-center items-center w-full mx-auto z-50 pt-3 md:fixed top-0 2xl:text-xl xl:text-lg hover:shadow-sm bg-[#BCB8B1] md:bg-transparent"
+    >
+      <ul
+        class="pb-5 nav-links duration-500 md:static absolute bg-transparent backdrop-blur-3xl md:backdrop-blur-none border-b-2 md:border-0 md:min-h-fit min-h-[40vh] left-0 top-[-100%] w-[100%] md:w-auto md:items-center px-5 z-0 flex flex-col md:flex-row md:gap-[4vw] gap-8 navigation justify-center pt-5"
+      >
+        <li class="group">
+          <a
+            class="hover:text-[#8A817C] font-bold transition-all duration-500 navlink"
+            href="#aboutme"
+            >About Me</a
+          >
+          <div
+            class="bg-[#E0AFA0] h-[2px] w-0 group-hover:w-full transition-all duration-500"
+          ></div>
+        </li>
+        <li class="group">
+          <a
+            class="hover:text-[#8A817C] font-bold transition-all duration-500 navlink"
+            href="#skills"
+            >Skills</a
+          >
+          <div
+            class="bg-[#E0AFA0] h-[2px] w-0 group-hover:w-full transition-all duration-500"
+          ></div>
+        </li>
+        <li class="group">
+          <a
+            class="hover:text-[#8A817C] font-bold transition-all duration-500 navlink"
+            href="#Project"
+            >Project</a
+          >
+          <div
+            class="bg-[#E0AFA0] h-[2px] w-0 group-hover:w-full transition-all duration-500"
+          ></div>
+        </li>
+        <li class="group">
+          <a
+            class="hover:text-[#8A817C] font-bold transition-all duration-500 navlink"
+            href="#project"
+            >Achievement</a
+          >
+          <div
+            class="bg-[#E0AFA0] h-[2px] w-0 group-hover:w-full transition-all duration-500"
+          ></div>
+        </li>
+        <li class="group">
+          <a
+            class="hover:text-[#8A817C] font-bold transition-all duration-500 navlink"
+            href="#contact"
+            >Contact</a
+          >
+          <div
+            class="bg-[#E0AFA0] h-[2px] w-0 group-hover:w-full transition-all duration-500"
+          ></div>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-6 mr-5">
+        <ion-icon
+          onclick="ontogglemenu(this)"
+          class="block md:hidden text-3xl cursor-pointer"
+          name="menu-outline"
+        ></ion-icon>
+      </div>
+    </nav>
+    <!-- HEADER PAGE -->
+    <header
+      id="header"
+      class="flex flex-col bg-[#BCB8B1] bg-fixed sticky top-0 w-full md:max-h-[1px] -z-10"
+    >
+      <div
+        class="bg-[#BCB8B1] overflow-x-hidden md:columns-2 max-h-[100vh] md:flex-none flex-col md:mt-0 overflow-hidden"
+      >
+        <div
+          class="header md:min-h-screen justify-center text-center items-center md:text-left md:flex flex-col overflow-hidden"
+        >
+          <div
+            class="text-header flex-col min-w-full md:ml-10 mt-10 text-center"
+          >
+            <div class="flex items-center text-center justify-center">
+              <span>Hello</span>
+              <hr class="w-10 h-px ml-2 my-8 bg-[#8A817C] border-0" />
+            </div>
+
+            <p class="text-7xl">
+              I'm <br />
+              <span
+                class="autotyped text-transparent bg-clip-text bg-gradient-to-r from-[#8A817C] to-[#463F3A] md:break-words"
+              ></span>
+            </p>
+            <p class="text-sm">
+              Future young full stack developer in Malaysia ?
+            </p>
+          </div>
+        </div>
+        <div
+          class="image-header header md:min-h-screen md:justify-start justify-center items-center flex overflow-hidden h-full"
+        >
+          <img class="h-full" src="assets/profile.svg" alt="" />
+        </div>
+      </div>
+    </header>
+    <!-- ENTAH -->
+    <div class="md:h-[90vh] bg-transparent"></div>
+    <!-- WAVE -->
+    <div>
+      <svg
+        class="waves-wave"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 30"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g class="parallax-wave">
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="9"
+            fill="#F4F3EE"
+            opacity="1"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="3"
+            fill="#F4F3EE"
+            opacity="0.7"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="5"
+            fill="#F4F3EE"
+            opacity="0.4"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="7"
+            fill="#F4F3EE"
+            opacity="0.2"
+          />
+        </g>
+      </svg>
+    </div>
+    <!-- SCROLL TO TOP BUTTON -->
+    <div class="z-50 relative">
+      <a
+        href="#header"
+        onclick="scrollToTop()"
+        class="mb-4 mr-4 flex justify-center items-center opacity-0 scroll-to-top h-12 w-12 fixed bottom-4 right-4 bg-gray-900 text-white rounded-xl transition duration-200 hover:bg-gray-700 hover:text-gray-200"
+      >
+        <ion-icon class="w-6 h-6" name="caret-up-outline"></ion-icon>
+      </a>
+    </div>
+
+    <!--MAIN CONTENT -->
+    <main class="bg-[#F4F3EE]">
+      <!--aboutme ################################################################################################## -->
+      <section
+        id="aboutme"
+        class="about-me flex-row lg:flex justify-center items-center min-h-screen transition-all duration-300 text-center pt-20 bg-[#F4F3EE]"
+      >
+        <div
+          class="title1 transition-all ease-in duration-700 text-[#8A817C] flex justify-center text-center items-start w-full lg:max-w-px lg:break-all lg:mr-32 lg:ml-10 mb-10 md:mb-0 lg:mb-0 text-5xl lg:text-7xl"
+        >
+          ABOUT ME
+        </div>
+        <div
+          class="flex-col md:flex justify-center items-center min-h-screen transition-all duration-300 text-center"
+        >
+          <div
+            id="about-me-image"
+            onclick="aboutmeimage()"
+            class="transition-all duration-300 md:cursor-pointer z-20 justify-center flex relative md:w-[700px] md:h-[400px]"
+          >
+            <img class="object-cover" src="assets/aboutme.png" alt="holder" />
+            <p
+              id="click"
+              class="absolute w-full h-full bg-gradient-to-r text-[#F4F3EE] from-black flex text-center justify-center items-center text-4xl transition-all duration-300 opacity-0 md:opacity-100"
+            >
+              CLICK
+            </p>
+          </div>
+          <div
+            id="about-me-text"
+            class="md:max-w-64 lg:max-w-80 text-center pt-10 md:pt-0 md:text-left md:absolute md:-translate-x-52 md:opacity-0 transition-all duration-400 delay-300 z-10 justify-center w-screen flex flex-col px-10 md:px-0"
+          >
+            <p>
+              Hello! I am <span class="font-bold text-lg">Muhammad Adib</span>,
+              a <span class="font-bold text-lg">16-year-old</span> student at
+              <span class="font-bold text-lg">Forward College</span>. My passion
+              for coding began at the age of 8 and continually encouraged my
+              curiosity and desire for technological knowledge. <br />
+              <br />
+              As I continue my education, I hope to
+              <span class="font-bold text-lg">improve</span> my coding abilities
+              while discovering the limitless opportunities that technology
+              provides.
+            </p>
+            <p></p>
+          </div>
+        </div>
+      </section>
+      <!--skill ################################################################################################## -->
+      <section
+        id="skills"
+        class="min-h-screen flex-col flex justify-center items-center pt-28"
+      >
+        <div
+          class="title4 text-[#8A817C] flex justify-center text-center items-start w-full md:text-7xl text-5xl transition-all duration-700 mb-8"
+        >
+          SKILLSS
+        </div>
+        <div
+          class="flex-row flex md:flex-row justify-center items-center lg:gap-10 md:gap-5 flex-wrap"
+        >
+          <div
+            class="w-[60%] md:w-[40%] lg:w-[30%] h-full flex flex-col-reverse justify-between items-center mb-5"
+          >
+            <div
+              class="flex justify-center items-center mt-5 sm:mt-0 sm:text-[40px] text-[30px]"
+            >
+              <ion-icon
+                class="text-[#dd4a24] pr-3"
+                name="logo-html5"
+              ></ion-icon>
+              <p>HTML</p>
+            </div>
+            <div class="skill w-[160px] h-[160px] relative">
+              <div
+                class="outer h-[160px] w-[160px] rounded-full shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15),_-6px_-6px_10px_-1px_rgba(255,255,255,0.7)] p-[20px]"
+              >
+                <div
+                  class="inner h-[120px] w-[120px] rounded-full flex items-center justify-center"
+                >
+                  <div id="number1" class="font-[600]"></div>
+                </div>
+              </div>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                width="160px"
+                height="160px"
+              >
+                <linearGradient id="GradientColor1">
+                  <stop offset="0%" stop-color="#BCB8B1" />
+                  <stop offset="100%" stop-color="#E0AFA0" />
+                </linearGradient>
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="70"
+                  stroke-linecap="round"
+                  class="circle1"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="w-[60%] md:w-[40%] lg:w-[30%] h-full flex flex-col-reverse justify-between items-center mb-5"
+          >
+            <div
+              class="flex justify-center items-center mt-5 sm:mt-0 sm:text-[40px] text-[30px]"
+            >
+              <ion-icon class="text-[#2c99f4] pr-3" name="logo-css3"></ion-icon>
+              <p>CSS</p>
+            </div>
+            <div class="skill w-[160px] h-[160px] relative">
+              <div
+                class="outer h-[160px] w-[160px] rounded-full shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15),_-6px_-6px_10px_-1px_rgba(255,255,255,0.7)] p-[20px]"
+              >
+                <div
+                  class="inner h-[120px] w-[120px] rounded-full flex items-center justify-center"
+                >
+                  <div id="number2" class="font-[600]"></div>
+                </div>
+              </div>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                width="160px"
+                height="160px"
+              >
+                <defs>
+                  <linearGradient id="GradientColor2">
+                    <stop offset="0%" stop-color="#BCB8B1" />
+                    <stop offset="100%" stop-color="#E0AFA0" />
+                  </linearGradient>
+                </defs>
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="70"
+                  stroke-linecap="round"
+                  class="circle2"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="w-[60%] md:w-[40%] lg:w-[30%] h-full flex flex-col-reverse justify-between items-center mb-5"
+          >
+            <div
+              class="flex items-center mt-5 sm:mt-0 sm:text-[40px] text-[30px]"
+            >
+              <ion-icon
+                class="text-[#f7df2c] pr-3"
+                name="logo-javascript"
+              ></ion-icon>
+              <p>JAVASCRIPT</p>
+            </div>
+            <div class="skill w-[160px] h-[160px] relative">
+              <div
+                class="outer h-[160px] w-[160px] rounded-full shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15),_-6px_-6px_10px_-1px_rgba(255,255,255,0.7)] p-[20px]"
+              >
+                <div
+                  class="inner h-[120px] w-[120px] rounded-full flex items-center justify-center"
+                >
+                  <div id="number3" class="font-[600]"></div>
+                </div>
+              </div>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                width="160px"
+                height="160px"
+              >
+                <defs>
+                  <linearGradient id="GradientColor3">
+                    <stop offset="0%" stop-color="#8A817C" />
+                    <stop offset="100%" stop-color="#E0AFA0" />
+                  </linearGradient>
+                </defs>
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="70"
+                  stroke-linecap="round"
+                  class="circle3"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="w-[60%] md:w-[40%] lg:w-[30%] h-full flex flex-col-reverse justify-between items-center mb-5"
+          >
+            <div
+              class="flex justify-center items-center mt-5 sm:mt-0 sm:text-[40px] text-[30px]"
+            >
+              <ion-icon
+                class="text-[#39719c] pr-3"
+                name="logo-python"
+              ></ion-icon>
+              <p>PYTHON</p>
+            </div>
+            <div class="skill w-[160px] h-[160px] relative">
+              <div
+                class="outer h-[160px] w-[160px] rounded-full shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15),_-6px_-6px_10px_-1px_rgba(255,255,255,0.7)] p-[20px]"
+              >
+                <div
+                  class="inner h-[120px] w-[120px] rounded-full flex items-center justify-center"
+                >
+                  <div id="number4" class="font-[600]"></div>
+                </div>
+              </div>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                width="160px"
+                height="160px"
+              >
+                <defs>
+                  <linearGradient id="GradientColor4">
+                    <stop offset="0%" stop-color="#BCB8B1 " />
+                    <stop offset="100%" stop-color="#E0AFA0" />
+                  </linearGradient>
+                </defs>
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="70"
+                  stroke-linecap="round"
+                  class="circle4"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--project ################################################################################################## -->
+      <section
+        id="Project"
+        class="Project flex flex-col justify-center items-center min-h-screen pt-28"
+      >
+        <div
+          class="title2 text-[#8A817C] flex justify-center text-center items-start w-full md:text-7xl text-5xl transition-all duration-700"
+        >
+          PROJECT
+        </div>
+        <div
+          class="flex justify-center items-center min-h-screen mt-10 lg:max-w-[80%]"
+        >
+          <div class="uwu container gap-10">
+            <div class="w-full flex justify-center items-center">
+              <div class="">
+                <div
+                  class="justify-center flex-col sm:flex my-5 mb-2 text-center scale-90 sm:scale-100 group transition-all duration-300 overflow-hidden"
+                >
+                  <img
+                    class="image1 w-[700px] h-[350px] object-cover"
+                    src="assets/coldy.jpg"
+                    alt="holder"
+                  />
+                  <div
+                    class="hobby-image1-text2 lg:text-[#F4F3EE] lg:absolute self-center max-w-[700px] flex flex-col justify-center items-center gap-8 w-full p-16 pt-5 pb-5 opacity-100 lg:opacity-0 group-hover:lg:opacity-100 lg:translate-y-40 bg-gradient-to-t duration-500 group-hover:translate-y-0 group-hover:bg-black/70 lg:h-full"
+                  >
+                    <h1 class="text-3xl uppercase border-b-2 border-b-white">
+                      Room Humidity Checker
+                    </h1>
+                    <p>
+                      The Room Humidity Checker project aims to develop a tiny
+                      device that monitors indoor humidity levels in real time,
+                      providing the best conditions for comfort and safety. It
+                      gives instant response using modern sensor technology,
+                      which allows proactive steps to maintain optimal humidity
+                      levels in homes and businesses. This invention is
+                      essential for both human well-being and material
+                      durability.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ### -->
+            <div
+              class="hobby-row2 flex-col lg:flex-row columns-1 lg:columns-2 my-5 gap-6 -z-50"
+            >
+              <div id="box2" class="">
+                <div
+                  class="justify-center flex-col sm:flex relative text-center mb-8 md:mb-0 sm:scale-100 scale-90 group overflow-hidden image-box-2 transition-all duration-300"
+                >
+                  <img
+                    class="image2 w-[700px] lg:h-[300px] object-cover self-center peer"
+                    src="assets/porte.jpg"
+                    alt="holder"
+                  />
+                  <div
+                    class="hobby-image1-text2 lg:text-[#F4F3EE] lg:absolute self-center max-w-[700px] flex flex-col justify-center items-center gap-8 p-16 lg:px-16 lg:p-0 pt-5 pb-5 opacity-100 lg:opacity-0 lg:translate-y-40 bg-gradient-to-t duration-500 group-hover:translate-y-0 group-hover:lg:opacity-100 group-hover:lg:bg-black/70 lg:h-full z-10"
+                  >
+                    <h1 class="text-3xl uppercase border-b-2 border-b-white">
+                      PortePixel
+                    </h1>
+                    <p>
+                      PortePixel is a unique motion detecting technology that
+                      alerts users when a doors is about to open. It uses
+                      blinking lights and a buzzer to attract attention. It also
+                      includes cybersecurity protections such as automatic
+                      locking at certain times and an encrypted password for
+                      admin access, which protects the room from unauthorised
+                      access.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="box3" class="">
+                <div
+                  class="justify-center flex-col sm:flex relative text-center sm:scale-100 scale-90 max-h[350px] group overflow-hidden"
+                >
+                  <img
+                    class="image3 w-[700px] lg:h-[300px] self-center"
+                    src="assets/coin.jpg"
+                    alt="holder"
+                  />
+                  <div
+                    class="hobby-image3-text lg:text-[#F4F3EE] lg:absolute self-center max-w-[700px] flex flex-col justify-center gap-8 items-center p-16 lg:p-0 lg:px-16 pt-5 pb-5 opacity-100 lg:opacity-0 group-hover:lg:opacity-100 lg:translate-y-40 bg-gradient-to-t duration-500 group-hover:translate-y-0 group-hover:lg:bg-black/70 lg:h-full"
+                  >
+                    <h1 class="text-3xl uppercase border-b-2 border-b-white">
+                      "The Gold" Game
+                    </h1>
+                    <p>
+                      "The Gold" is an interesting obby game created with the
+                      Scratch app in which players must overcome challenging
+                      obstacles to get to destination. With vibrant visuals and
+                      simple controls, players start on an exciting journey full
+                      of twists and turns. Dodge dangers jump over gaps, and
+                      collect cash as you work your way through each level.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--achievement ################################################################################################## -->
+      <section
+        id="project"
+        class="project flex flex-col justify-start items-center min-h-screen pt-28"
+      >
+        <div
+          class="title3 opacity-0 text-[#8A817C] flex justify-center text-center items-start w-full md:text-7xl text-5xl transition-all duration-700 mb-14"
+        >
+          SUCCESS
+        </div>
+        <div class="wrapper-achievement">
+          <div class="container-achievement">
+            <div class="container-2 test-achievement-sm test-achievement">
+              <input
+                type="radio"
+                name="slide"
+                id="c1"
+                checked
+                class="input-achievement"
+              />
+              <label for="c1" class="card-achievement">
+                <div class="row-achievement">
+                  <div class="icon-achievement">1</div>
+                  <div class="description-achievement">
+                    <h4>PCEP PYTHON EXAM</h4>
+                    <p style="color: greenyellow">PASS</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="container-2 test-achievement-sm test-achievement">
+              <input
+                type="radio"
+                name="slide"
+                id="c2"
+                class="input-achievement"
+              />
+              <label for="c2" class="card-achievement">
+                <div class="row-achievement">
+                  <div class="icon-achievement">2</div>
+                  <div class="description-achievement">
+                    <h4>SIIC COMPETITION</h4>
+                    <p style="color: greenyellow">SILVER MEDAL</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="container-2 test-achievement-sm test-achievement">
+              <input
+                type="radio"
+                name="slide"
+                id="c3"
+                class="input-achievement"
+              />
+              <label for="c3" class="card-achievement">
+                <div
+                  class="row-achievement"
+                  style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                  <div class="icon-achievement">3</div>
+                  <div class="description-achievement">
+                    <h4>LEVEL UP @ SCHOOL COMPETITION</h4>
+                    <p style="color: greenyellow">PARTICIPATION</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="container-2 test-achievement-sm test-achievement">
+              <input
+                type="radio"
+                name="slide"
+                id="c4"
+                class="input-achievement"
+              />
+              <label for="c4" class="card-achievement">
+                <div
+                  class="row-achievement"
+                  style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                  <div class="icon-achievement">4</div>
+                  <div class="description-achievement">
+                    <h4>DBHERO COMPETITION</h4>
+                    <p style="color: greenyellow">PARTICIPATION</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--contact ################################################################################################## -->
+      <section
+        id="contact"
+        class="flex justify-center items-center min-h-screen pb-10 mt-10"
+      >
+        <div class="flex w-full min-h-screen justify-center items-center">
+          <div
+            class="flex flex-col md:flex-row md:space-x-6 md:space-y-0 md:justify-between space-y-6 bg-[#8A817C] w-full max-w-7xl p-8 rounded-xl shadow-lg text-white"
+          >
+            <div class="flex flex-col space-y-8 justify-between md:max-w-[50%]">
+              <div>
+                <h1 class="font-bold text text-4xl tracking-wide">
+                  Contact Me
+                </h1>
+                <p class="pt-2 text-sm">
+                  If you got any question, feel free to reach me :)
+                </p>
+              </div>
+              <div class="flex flex-col space-y-6">
+                <div class="inline-flex space-x-2 items-center">
+                  <ion-icon
+                    name="call"
+                    class="text-[#F4F3EE] text-xl"
+                  ></ion-icon
+                  ><span>+(60)11 55556 7020</span>
+                </div>
+                <div class="inline-flex space-x-2 items-center">
+                  <ion-icon
+                    name="mail"
+                    class="text-[#F4F3EE] text-xl"
+                  ></ion-icon
+                  ><span>adibdb1003@gmail.com</span>
+                </div>
+                <div class="inline-flex space-x-2 items-center">
+                  <ion-icon
+                    name="location"
+                    class="text-[#F4F3EE] text-xl"
+                  ></ion-icon
+                  ><span>Forward College</span>
+                </div>
+              </div>
+              <div class="flex space-x-4 text-lg">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100072474496653"
+                  ><ion-icon name="logo-facebook"></ion-icon
+                ></a>
+                <a href="https://www.instagram.com/adib___________p/"
+                  ><ion-icon name="logo-instagram"></ion-icon
+                ></a>
+                <a href="https://twitter.com/adibdbb"
+                  ><ion-icon name="logo-twitter"></ion-icon
+                ></a>
+                <a href="https://www.linkedin.com/in/muhammad-adib-95b76a2aa/"
+                  ><ion-icon name="logo-linkedin"></ion-icon
+                ></a>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-xl p-8 shadow-lg text-gray-600 md:w-[40%]"
+            >
+              <form action="" class="flex-col flex space-y-4">
+                <div>
+                  <label for="" class="text-sm">Your Name</label>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      class="ring-1 ring-gray-300 w-full px-4 py-2 mt-2 outline-none rounded-md focus:ring-2 focus:ring-[#8A817C]"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label for="" class="text-sm">Email Address</label>
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      class="ring-1 ring-gray-300 w-full px-4 py-2 mt-2 outline-none rounded-md focus:ring-2 focus:ring-[#8A817C]"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label for="" class="text-sm">Message</label>
+                  <div>
+                    <textarea
+                      placeholder="Message"
+                      rows="4"
+                      class="ring-1 ring-gray-300 w-full px-4 py-2 mt-2 outline-none rounded-md focus:ring-2 focus:ring-[#8A817C]"
+                    ></textarea>
+                  </div>
+                </div>
+                <button
+                  class="flex self-end bg-[#8A817C] text-white font-bold rounded-lg px-6 py-2 uppercase text-sm overflow-hidden group"
+                >
+                  <p
+                    class="translate-x-0 group-hover:translate-x-[300px] transition-all duration-300"
+                  >
+                    send Message
+                  </p>
+                  <ion-icon
+                    name="send"
+                    class="text-lg absolute -translate-x-[300px] opacity-0 group-hover:opacity-100 group-hover:translate-x-[50px] transition-all duration-300"
+                  ></ion-icon>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div
+        class="rounded-t-lg w-full p-2 bg-[#8A817C] text-center justify-center items-center flex text-[#F4F3EE]"
+      >
+        &copy; Copyright 2024 Adib
+      </div>
+    </footer>
+    <!-- #################################################################################################### -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- REVEAL SCROLL ANIMATION -->
+    <script>
+      const section1 = document.querySelector(".about-me");
+      const section2 = document.querySelector(".Project");
+      const section3 = document.querySelector(".project");
+      const section4 = document.querySelector(".skills");
+      const uwu = document.querySelector(".uwu");
+      const title1 = document.querySelector(".title1");
+      const title2 = document.querySelector(".title2");
+      const title3 = document.querySelector(".title3");
+      const title4 = document.querySelector(".title4");
+
+      const objOptions = {
+        root: null,
+        threshold: 0,
+        rootMargin: "-100px",
+      };
+      const sectionObserver1 = new IntersectionObserver(
+        callBackFunction1,
+        objOptions
+      );
+      const sectionObserver2 = new IntersectionObserver(
+        callBackFunction2,
+        objOptions
+      );
+      const sectionObserver3 = new IntersectionObserver(
+        callBackFunction3,
+        objOptions
+      );
+      const sectionObserver4 = new IntersectionObserver(
+        callBackFunction4,
+        objOptions
+      );
+      sectionObserver1.observe(section1);
+      sectionObserver2.observe(section2);
+      sectionObserver3.observe(section3);
+      sectionObserver4.observe(section4); //hobby
+
+      function callBackFunction1(entries) {
+        const [entry] = entries;
+        console.log(entry);
+        if (entry.isIntersecting) {
+          title1.classList.remove("opacity-0");
+        } else {
+          title1.classList.add("opacity-0");
+        }
+      }
+
+      function callBackFunction2(entries) {
+        const [entry] = entries;
+        console.log(entry);
+        if (entry.isIntersecting) {
+          title2.classList.remove("opacity-0");
+        } else {
+          title2.classList.add("opacity-0");
+        }
+      }
+      function callBackFunction3(entries) {
+        const [entry] = entries;
+        console.log(entry);
+        if (entry.isIntersecting) {
+          title3.classList.remove("opacity-0");
+        } else {
+          title3.classList.add("opacity-0");
+        }
+      }
+      function callBackFunction4(entries) {
+        const [entry] = entries;
+        console.log(entry);
+        if (entry.isIntersecting) {
+          title4.classList.remove("opacity-0");
+        } else {
+          title4.classList.add("opacity-0");
+        }
+      }
+    </script>
+    <!-- NAVBAR COMPRESS -->
+    <script>
+      const navLinks = document.querySelector(".nav-links");
+      function ontogglemenu(e) {
+        e.name = e.name === "menu-outline" ? "close" : "menu-outline";
+        navLinks.classList.toggle("top-[9%]");
+      }
+    </script>
+    <!-- ACTIVE NAVBAR -->
+    <script>
+      let sections = document.querySelectorAll("section,header");
+      let navLink = document.querySelectorAll("nav ul li a");
+
+      window.onscroll = () => {
+        sections.forEach((sec) => {
+          let top = window.scrollY;
+          let offset = sec.offsetTop - 92;
+          let height = sec.offsetHeight;
+          let id = sec.getAttribute("id");
+
+          if (top >= offset && top < offset + height) {
+            navLink.forEach((links) => {
+              links.classList.remove("text-[#8A817C]");
+
+              document
+                .querySelector("nav ul li a[href*=" + id + "]")
+                .classList.add("text-[#8A817C]");
+            });
+          }
+        });
+      };
+    </script>
+    <!-- // SCROLL TO TOP -->
+    <script>
+      const scrollToTopButton = document.querySelector(".scroll-to-top");
+      // Show button when user scrolls down
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollToTopButton.classList.add("opacity-100");
+        } else {
+          scrollToTopButton.classList.remove("opacity-100");
+        }
+      });
+
+      // Smooth scroll to top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    </script>
+    <!-- // ABOUT ME ANIMATION -->
+    <script>
+      function aboutmeimage() {
+        const image = document.getElementById("about-me-image");
+        const click = document.getElementById("click");
+        const text = document.getElementById("about-me-text");
+        image.classList.toggle("md:w-[50%]");
+        image.classList.toggle("md:-translate-x-40");
+        text.classList.toggle("md:-translate-x-44");
+        text.classList.toggle("lg:translate-x-60");
+        text.classList.toggle("md:translate-x-44");
+        text.classList.toggle("md:opacity-100");
+        click.classList.toggle("md:opacity-100");
+      }
+    </script>
+
+    <!-- // HEADER TYPING ANIMATION -->
+    <script>
+      var typed = new Typed(".autotyped", {
+        strings: ["Adib", "Student", "Coder"],
+        typeSpeed: 300,
+        backSpeed: 100,
+        loop: true,
+      });
+    </script>
+
+    <!-- ICONS -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- PROJECT TILT ANIMATION -->
+    <script>
+      window.addEventListener("resize", () => {
+        const containerAchieve = document.querySelector(".container-2");
+
+        // If window screen is at least 500px
+        if (window.matchMedia("(max-width: 768px)").matches) {
+          containerAchieve.classList.remove("test-achievement");
+          containerAchieve.classList.add("test-achievement-sm");
+        } else {
+          containerAchieve.classList.remove("test-achievement-sm");
+          containerAchieve.classList.add("test-achievement");
+        }
+      });
+
+      const containers = document.querySelectorAll(".test-achievement");
+      const cards = document.querySelectorAll(
+        ".card-achievement",
+        "row-acievement"
+      );
+
+      let scrollY = 0;
+
+      window.addEventListener("scroll", () => {
+        //Get the scroll amount
+        scrollY = document.documentElement.scrollTop;
+      });
+
+      for (let i = 0; i < cards.length; i++) {
+        //Create new element for the Light
+        const light = document.createElement("span");
+        //Add a class name
+        light.setAttribute("class", "light");
+        //Append the new element to each card
+        cards[i].appendChild(light);
+        //Add a mousemove event to each card container
+        containers[i].addEventListener("mousemove", function (e) {
+          //Get mouse coordinates on X axis inside the card cont
+          const innerX = e.clientX - this.offsetLeft;
+          const innerY = e.clientY - this.offsetTop + scrollY;
+          light.style.left = innerX + "px";
+          light.style.top = innerY + "px";
+          //Add active class for the Light
+          light.classList.add("light-active");
+
+          const x = cards[i].offsetWidth / 2;
+          const y = cards[i].offsetHeight / 2;
+          //Set intensity variables for both axes
+          const intensityX = 5;
+          const intensityY = 3;
+          //Reformat the coordinate values
+          let convertX = ((innerX - x) * intensityX) / x;
+          let convertY = ((innerY - y) * intensityY) / y;
+          cards[i].style.transform = `rotateY(${
+            convertX * -1
+          }deg) rotateX(${convertY}deg)`;
+        });
+
+        containers[i].addEventListener("mouseout", function () {
+          // Remove active Light class
+          light.classList.remove("light-active");
+          //Reset card rotation
+          cards[i].style.transform = "rotateY(0deg)";
+        });
+      }
+    </script>
+    <!-- SKILLS PROGRESS ANIMATION -->
+    <script>
+      let number1 = document.getElementById("number1");
+      let number2 = document.getElementById("number2");
+      let number3 = document.getElementById("number3");
+      let number4 = document.getElementById("number4");
+      let counter1 = 0;
+      let counter2 = 0;
+      let counter3 = 0;
+      let counter4 = 0;
+
+      setInterval(() => {
+        if (counter1 == 9) {
+          clearInterval();
+        } else {
+          counter1 += 1;
+          number1.innerHTML = counter1 + "/10";
+        }
+      }, 200);
+
+      setInterval(() => {
+        if (counter2 == 7) {
+          clearInterval();
+        } else {
+          counter2 += 1;
+          number2.innerHTML = counter2 + "/10";
+        }
+      }, 240);
+
+      setInterval(() => {
+        if (counter3 == 4) {
+          clearInterval();
+        } else {
+          counter3 += 1;
+          number3.innerHTML = counter3 + "/10";
+        }
+      }, 400);
+
+      setInterval(() => {
+        if (counter4 == 7) {
+          clearInterval();
+        } else {
+          counter4 += 1;
+          number4.innerHTML = counter4 + "/10";
+        }
+      }, 240);
+    </script>
+  </body>
+</html>
