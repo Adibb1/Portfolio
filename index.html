@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="h-full scroll-smooth no-scrollbar">
   <head>
     <meta charset="UTF-8" />
@@ -426,7 +426,8 @@
   <!-- FOR SKILLS -->
   <style>
     .inner {
-      box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+      box-shadow:
+        inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
         inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
         -0.5px -0.5px 0px rgba(255, 255, 255, 1),
         0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
@@ -481,7 +482,7 @@
     }
     @keyframes progressBar3 {
       100% {
-        stroke-dashoffset: 283.2;
+        stroke-dashoffset: 90;
       }
     }
     @keyframes progressBar4 {
@@ -696,10 +697,10 @@
           >
             <p>
               Hello! I am <span class="font-bold text-lg">Muhammad Adib</span>,
-              a <span class="font-bold text-lg">16-year-old</span> student at
-              <span class="font-bold text-lg">Forward College</span>. My passion
-              for coding began at the age of 8 and continually encouraged my
-              curiosity and desire for technological knowledge. <br />
+              a <span class="font-bold text-lg">18-years-old</span> student
+              <span class="font-bold text-lg"> </span>. My passion for coding
+              began at the age of 8 and continually encouraged my curiosity and
+              desire for technological knowledge. <br />
               <br />
               As I continue my education, I hope to
               <span class="font-bold text-lg">improve</span> my coding abilities
@@ -1240,19 +1241,19 @@
       };
       const sectionObserver1 = new IntersectionObserver(
         callBackFunction1,
-        objOptions
+        objOptions,
       );
       const sectionObserver2 = new IntersectionObserver(
         callBackFunction2,
-        objOptions
+        objOptions,
       );
       const sectionObserver3 = new IntersectionObserver(
         callBackFunction3,
-        objOptions
+        objOptions,
       );
       const sectionObserver4 = new IntersectionObserver(
         callBackFunction4,
-        objOptions
+        objOptions,
       );
       sectionObserver1.observe(section1);
       sectionObserver2.observe(section2);
@@ -1402,7 +1403,7 @@
       const containers = document.querySelectorAll(".test-achievement");
       const cards = document.querySelectorAll(
         ".card-achievement",
-        "row-acievement"
+        "row-acievement",
       );
 
       let scrollY = 0;
@@ -1480,13 +1481,13 @@
       }, 240);
 
       setInterval(() => {
-        if (counter3 == 4) {
+        if (counter3 == 8) {
           clearInterval();
         } else {
           counter3 += 1;
           number3.innerHTML = counter3 + "/10";
         }
-      }, 400);
+      }, 220);
 
       setInterval(() => {
         if (counter4 == 7) {
