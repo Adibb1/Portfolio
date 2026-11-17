@@ -1,46 +1,73 @@
-# Adib's Portfolio (Next.js + Chakra UI)
+<div align="center">
 
-## 1. Run it on your computer
+# Muhammad Adib bin Adnan | Portfolio
 
-1. Install Node.js: go to https://nodejs.org and download the **LTS** version. Install it with all default options.
-2. Unzip this folder (for example to `Documents/adib-portfolio`).
-3. Open a terminal **inside that folder**:
-   - Windows: open the folder in File Explorer, click the address bar, type `cmd`, press Enter.
-   - Mac: right-click the folder, choose "New Terminal at Folder".
-   - Or open the folder in VS Code and press `Ctrl + ~`.
-4. Type this and press Enter (takes about 1 minute):
-   ```
-   npm install
-   ```
-5. Type this and press Enter:
-   ```
-   npm run dev
-   ```
-6. Open http://localhost:3000 in your browser. Any file you save updates the page instantly.
-   Press `Ctrl + C` in the terminal to stop.
+A fast, responsive personal portfolio built with **Next.js** and **Chakra UI**.
 
-## 2. Change your text, projects and links
+[**Live site → adibb1.xyz**](https://adibb1.xyz)
 
-Open `lib/data.ts`. Everything is in clearly named lists:
+<img src="/Screenshot 2026-11-17 185027.png" alt="Portfolio on desktop" width="720" />
 
-- `profile`: your name, title, tagline, about text
-- `links`: email, LinkedIn, GitHub. Fill in `instagram` or `x` (a full URL) to show those buttons too
-- `projects`, `experience`, `leadership`, `education`, `achievements`, `skills`
+</div>
 
-Check the descriptions I wrote for your projects and leadership roles and edit anything that is not accurate. Your photo is `public/profile.png`: replace it with a better one using the same file name.
+---
 
-## 3. Add a new LinkedIn post
+## About
 
-LinkedIn does not allow websites to read your posts automatically for free, so you add each post in one small file:
+This is the source code of my personal portfolio. It presents my projects, experience, leadership roles, education and latest LinkedIn updates in one place, and gives visitors easy ways to get in touch.
 
-1. On LinkedIn, open your post, click the `...` menu, choose **Copy link to post**.
-2. Open `data/linkedin-posts.ts`.
-3. Copy the example block from the comments into the `linkedinPosts` list, fill in `date`, `title`, `summary` and paste the link into `url`.
-4. Save. The post appears in the "Latest on LinkedIn" section.
+I am a Software Engineering student at Universiti Kebangsaan Malaysia (UKM), focused on cybersecurity, systems programming and machine learning.
 
-## 4. Put it online for free (Vercel)
+## Features
 
-1. Create a free account at https://github.com and make a new repository called `portfolio`.
-2. Upload this project's files to it (not the `node_modules` folder).
-3. Go to https://vercel.com, sign up with GitHub, click **Add New... > Project**, pick `portfolio`, and click **Deploy**.
-4. Whenever you update a file on GitHub (for example a new LinkedIn post), Vercel redeploys automatically.
+- **Sections:** About, Projects, Experience, Leadership, Education & Highlights, Latest on LinkedIn, and Contact
+- **Fully responsive:** a mobile and tablet menu, fluid typography and layouts tested from 320px phones up to large desktops
+- **Dark and light mode:** dark by default, with a toggle in the navigation bar
+- **Smooth scrolling:** menu links glide to each section (and respect the "reduce motion" setting)
+- **Single source of content:** all text, projects, links and skills live in one file, so no component code needs editing
+- **LinkedIn updates:** a "Latest on LinkedIn" section driven by a simple data file
+- **Smart contact buttons:** email opens the mail app on phones and a Gmail compose window on desktop, plus a one-click "Copy email" button
+- **Static and fast:** pre-rendered pages, deployed on Vercel's edge network
+
+## Tech Stack
+
+| Area       | Technology                                                             |
+| ---------- | ---------------------------------------------------------------------- |
+| Framework  | [Next.js](https://nextjs.org/) (App Router)                            |
+| Language   | [TypeScript](https://www.typescriptlang.org/)                          |
+| UI library | [Chakra UI v3](https://chakra-ui.com/)                                 |
+| Theming    | [next-themes](https://github.com/pacocoursey/next-themes)              |
+| Icons      | [React Icons](https://react-icons.github.io/react-icons/) (Lucide set) |
+| Hosting    | [Vercel](https://vercel.com/)                                          |
+
+## Getting Started
+
+You need [Node.js](https://nodejs.org/) 20 or newer (the LTS version is recommended).
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Adibb1/portfolio.git
+cd portfolio
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000). The page reloads automatically whenever you save a file.
+
+### Other commands
+
+| Command         | What it does                          |
+| --------------- | ------------------------------------- |
+| `npm run dev`   | Starts the development server         |
+| `npm run build` | Creates an optimized production build |
+| `npm run start` | Serves the production build locally   |
+
+## Connect With Me
+
+- LinkedIn: [Muhammad Adib bin Adnan](https://www.linkedin.com/in/muhammad-adib-bin-adnan-95b76a2aa/)
+- GitHub: [@Adibb1](https://github.com/Adibb1)
+- Website: [adibb1.xyz](https://adibb1.xyz)
