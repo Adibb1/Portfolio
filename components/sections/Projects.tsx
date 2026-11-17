@@ -36,7 +36,7 @@ export function Projects() {
             </Card.Body>
             {p.href && (
               <Card.Footer>
-                <Button asChild variant="ghost" colorPalette="teal" size="sm">
+                <Button asChild variant="subtle" colorPalette="teal" size="sm">
                   <a href={p.href} target="_blank" rel="noopener noreferrer">
                     {p.label} <LuExternalLink />
                   </a>

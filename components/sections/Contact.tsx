@@ -1,10 +1,48 @@
 "use client";
 
-import { Box, Button, Flex, Stack, Text } from "@chakra-ui/react";
-import { LuLinkedin, LuMail } from "react-icons/lu";
+import { Box, Button, Flex, HStack, Stack, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import { LuCheck, LuCopy, LuLinkedin, LuMail } from "react-icons/lu";
 import { Section } from "@/components/Shared";
 import { SocialLinks } from "@/components/SocialLinks";
 import { links } from "@/lib/data";
+import { handleEmailClick } from "@/lib/mail";
+
+function CopyEmail() {
+  const [copied, setCopied] = useState(false);
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(links.email);
+    } catch {
+      // Older browsers: fall back to the old copy method.
+      try {
+        const box = document.createElement("textarea");
+        box.value = links.email;
+        document.body.appendChild(box);
+        box.select();
+        document.execCommand("copy");
+        document.body.removeChild(box);
+      } catch {
+        return;
+      }
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
+  return (
+    <HStack gap={3} wrap="wrap" pt={1}>
+      <Text fontFamily="mono" fontSize="sm" wordBreak="break-all">
+        {links.email}
+      </Text>
+      <Button size="xs" variant="subtle" onClick={copy} aria-live="polite">
+        {copied ? <LuCheck /> : <LuCopy />}
+        {copied ? "Copied" : "Copy"}
+      </Button>
+    </HStack>
+  );
+}
 
 export function Contact() {
   return (
@@ -33,6 +71,7 @@ export function Contact() {
             <Text color="fg.muted">
               Email or a LinkedIn message. I will reply as soon as I can.
             </Text>
+            {links.email && <CopyEmail />}
             <Box pt={3}>
               <SocialLinks size="lg" />
             </Box>
@@ -44,7 +83,10 @@ export function Contact() {
               size="lg"
               w={{ base: "full", sm: "auto" }}
             >
-              <a href={`mailto:${links.email}`}>
+              <a
+                href={`mailto:${links.email}`}
+                onClick={(e) => handleEmailClick(e, links.email)}
+              >
                 <LuMail /> Email me
               </a>
             </Button>
