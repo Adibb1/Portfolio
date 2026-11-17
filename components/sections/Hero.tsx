@@ -115,6 +115,8 @@ export function Hero() {
           >
             <Avatar.Fallback name={profile.shortName} />
             <Avatar.Image
+              borderWidth="4px"
+              rounded="3xl"
               src={profile.photo}
               alt={profile.shortName}
               objectFit="cover"
