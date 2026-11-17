@@ -6,7 +6,7 @@ A fast, responsive personal portfolio built with **Next.js** and **Chakra UI**.
 
 [**Live site → adibb1.xyz**](https://adibb1.xyz)
 
-<img src="/Screenshot 2026-11-17 185027.png" alt="Portfolio on desktop" width="720" />
+<img src="public/Screenshot 2026-11-17 185027.png" alt="Portfolio on desktop" width="720" />
 
 </div>
 
