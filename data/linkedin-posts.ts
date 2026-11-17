@@ -1,4 +1,3 @@
-// ============================================================
 // LINKEDIN POSTS
 //
 // LinkedIn does not let websites read your posts automatically
@@ -9,7 +8,6 @@
 //   3. Add a new item at the list below.
 //   4. Save the file.
 //
-// Copy this block for each new post:
 /*
   {
     date: "2026-11-17",
@@ -18,7 +16,6 @@
     url: "https://www.linkedin.com/posts/....",
   },
 */
-// ============================================================
 
 export type LinkedInPost = {
   date: string; // YYYY-MM-DD
@@ -33,7 +30,6 @@ export const linkedinPosts: LinkedInPost[] = [
     title: "Haven KL game jam at Microsoft Malaysia",
     summary:
       "Spent the weekend at Microsoft Malaysia, Menara Shell for Haven KL, a two-day game jam organized by Hack Club.",
-    // TODO: replace this with the link to the exact post (see steps above).
     url: "https://www.linkedin.com/in/muhammad-adib-bin-adnan-95b76a2aa/recent-activity/all/",
   },
 ];

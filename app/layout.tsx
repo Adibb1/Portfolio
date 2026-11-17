@@ -4,7 +4,7 @@ import { Provider } from "@/components/ui/provider";
 import { profile } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: `${profile.shortName}`,
+  title: `Adib | Porfolio`,
   description: profile.tagline,
   icons: {
     icon: "/codeIcon.png",
