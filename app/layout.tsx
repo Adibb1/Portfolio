@@ -4,8 +4,11 @@ import { Provider } from "@/components/ui/provider";
 import { profile } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: `${profile.shortName} | Portfolio`,
+  title: `${profile.shortName}`,
   description: profile.tagline,
+  icons: {
+    icon: "/codeIcon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -22,28 +22,28 @@ export function Hero() {
       id="top"
       position="relative"
       overflow="hidden"
-      py={{ base: 16, md: 28 }}
+      py={{ base: 10, md: 20, lg: 28 }}
     >
       <Box
         position="absolute"
         top="-120px"
         right="-120px"
-        w="420px"
-        h="420px"
+        w={{ base: "260px", md: "420px" }}
+        h={{ base: "260px", md: "420px" }}
         borderRadius="full"
         bg="teal.500"
         opacity={0.15}
         filter="blur(90px)"
         pointerEvents="none"
       />
-      <Container maxW="5xl" position="relative">
+      <Container maxW="5xl" px={{ base: 5, md: 8 }} position="relative">
         <Flex
           direction={{ base: "column-reverse", md: "row" }}
           align={{ base: "flex-start", md: "center" }}
           justify="space-between"
-          gap={10}
+          gap={{ base: 8, md: 10 }}
         >
-          <Stack gap={5} maxW="2xl">
+          <Stack gap={{ base: 4, md: 5 }} maxW="2xl" minW={0}>
             <Badge
               colorPalette="teal"
               variant="subtle"
@@ -56,15 +56,16 @@ export function Hero() {
             </Badge>
             <Heading
               as="h1"
-              size={{ base: "4xl", md: "6xl" }}
+              size={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
               letterSpacing="-0.03em"
-              lineHeight="1.05"
+              lineHeight="1.1"
+              wordBreak="break-word"
             >
               Hi, I&apos;m {profile.shortName}.
             </Heading>
             <Heading
               as="h2"
-              size={{ base: "xl", md: "2xl" }}
+              size={{ base: "lg", sm: "xl", md: "2xl" }}
               color="teal.500"
               fontWeight="semibold"
             >
@@ -73,27 +74,39 @@ export function Hero() {
             <Text fontSize={{ base: "md", md: "lg" }} color="fg.muted">
               {profile.tagline}
             </Text>
-            <HStack color="fg.muted" gap={1}>
-              <LuMapPin />
+            <HStack color="fg.muted" gap={1} align="flex-start">
+              <Box pt="3px">
+                <LuMapPin />
+              </Box>
               <Text fontSize="sm">{profile.location}</Text>
             </HStack>
-            <HStack gap={3} wrap="wrap" pt={2}>
-              <Button asChild colorPalette="teal" size="lg">
+            <Stack direction={{ base: "column", sm: "row" }} gap={3} pt={2}>
+              <Button
+                asChild
+                colorPalette="teal"
+                size="lg"
+                w={{ base: "full", sm: "auto" }}
+              >
                 <a href="#projects">
                   View my work <LuArrowDown />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                w={{ base: "full", sm: "auto" }}
+              >
                 <a href="#contact">Get in touch</a>
               </Button>
-            </HStack>
+            </Stack>
             <Box pt={2}>
               <SocialLinks />
             </Box>
           </Stack>
 
           <Avatar.Root
-            boxSize={{ base: "40", md: "72" }}
+            boxSize={{ base: "32", sm: "40", md: "56", lg: "72" }}
             shape="rounded"
             borderWidth="4px"
             borderColor="teal.500"

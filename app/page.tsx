@@ -14,7 +14,7 @@ import { profile } from "@/lib/data";
 
 export default function Home() {
   return (
-    <Box minH="100vh">
+    <Box minH="100dvh">
       <Navbar />
       <main>
         <Hero />
@@ -27,10 +27,10 @@ export default function Home() {
         <Contact />
       </main>
       <Box as="footer" borderTopWidth="1px" borderColor="border" py={8}>
-        <Container maxW="5xl">
+        <Container maxW="5xl" px={{ base: 5, md: 8 }}>
           <Text color="fg.muted" fontSize="sm" textAlign="center">
-            © {new Date().getFullYear()} {profile.shortName}. Built with Next.js
-            and Chakra UI.
+            © {new Date().getFullYear()} {profile.name}. Built with Next.js and
+            Chakra UI.
           </Text>
         </Container>
       </Box>

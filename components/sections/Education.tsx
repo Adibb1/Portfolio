@@ -7,8 +7,9 @@ import { education, highlights } from "@/lib/data";
 function Row({ title, right }: { title: string; right: string }) {
   return (
     <Flex
+      direction={{ base: "column", sm: "row" }}
       justify="space-between"
-      gap={4}
+      gap={{ base: 0.5, sm: 4 }}
       py={3}
       borderBottomWidth="1px"
       borderColor="border"
@@ -24,7 +25,7 @@ function Row({ title, right }: { title: string; right: string }) {
 export function Education() {
   return (
     <Section id="education" title="Education & Highlights">
-      <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 10, md: 14 }}>
+      <SimpleGrid columns={{ base: 1, lg: 2 }} gap={{ base: 10, lg: 14 }}>
         <Stack gap={7}>
           <Heading size="lg">Education</Heading>
           {education.map((e) => (

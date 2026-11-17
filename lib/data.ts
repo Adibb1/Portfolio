@@ -1,6 +1,3 @@
-// change the text
-// Everything on the site (except LinkedIn posts) comes from here.
-
 export const profile = {
   name: "Muhammad Adib bin Adnan",
   shortName: "Muhammad Adib",
@@ -9,10 +6,9 @@ export const profile = {
   tagline:
     "Cybersecurity, systems programming and machine learning. I build full-stack web tools, data dashboards and games.",
   location: "Bandar Baru Bangi, Selangor, Malaysia",
-  photo: "/profile.png",
+  photo: "/profile.jpg",
 };
 
-// Follows the About section on LinkedIn.
 export const about = {
   paragraphs: [
     "I am an 18-year-old Bachelor of Software Engineering student at Universiti Kebangsaan Malaysia (UKM), having entered directly from high school through an accelerated pathway in software engineering.",
@@ -49,16 +45,16 @@ export const about = {
     "I am looking for software engineering internships at startups or small engineering teams, as well as tech community and volunteering opportunities.",
 };
 
-// Leave a link as "" to hide its button. Add more socials here if you want.
+// leave a link as "" to hide its button.
 export const links = {
   email: "adibdb1003@gmail.com",
   linkedin: "https://www.linkedin.com/in/muhammad-adib-bin-adnan-95b76a2aa/",
   github: "https://github.com/Adibb1",
-  instagram: "",
+  instagram: "https://www.instagram.com/mhadibb_p/",
   x: "",
 };
 
-// Newest first. Leave href and label as "" to hide the link button.
+// leave href and label as "" to hide the link button.
 export const projects = [
   {
     title: "AwakeGary (2D Game)",
@@ -66,8 +62,8 @@ export const projects = [
     description:
       "A 2D physics-based charge-jump platformer built in 48 hours at Microsoft Malaysia during the Haven KL game jam.",
     tags: ["Godot 4", "GDScript", "Game jam"],
-    href: "https://github.com/Adibb1/AwakeGary",
-    label: "View on GitHub",
+    href: "https://adibb1.itch.io/awakegary",
+    label: "View on itch.io",
   },
   {
     title: "Algeterra (3D Game)",
@@ -75,8 +71,8 @@ export const projects = [
     description:
       "A 3D game designed and developed in Unity with C#, built for high-school students.",
     tags: ["Unity", "C#", "Game dev"],
-    href: "",
-    label: "",
+    href: "https://ezxd1148.itch.io/ezebra-city",
+    label: "View on itch.io",
   },
   {
     title: "Forward College Aptitude Test Website",
@@ -93,12 +89,22 @@ export const projects = [
     description:
       "A machine learning web app that classifies the mood of Spotify playlists, using Selenium web scraping to collect the data.",
     tags: ["Machine Learning", "Python", "Next.js", "Selenium"],
-    href: "https://tinyurl.com/ytbdd8pj",
-    label: "View project",
+    href: "",
+    label: "",
   },
 ];
 
 export const experience = [
+  {
+    role: "Developer, Algeterra Game",
+    org: "Freelance, with a teammate",
+    period: "Jul 2026 - Present",
+    points: [
+      "Designed and developed a 3D game in Unity using C#.",
+      "Built for highschool students who have problems with algebraic equations, by visualising how numbers move around in the equation.",
+      "Have custom player movement, spatial environments, and core gameplay mechanics.",
+    ],
+  },
   {
     role: "Participant, Haven KL Game Jam",
     org: "Hack Club at Microsoft Malaysia, Menara Shell",
@@ -119,9 +125,12 @@ export const experience = [
   },
   {
     role: "Participant, Forward School Hackathon x Lintramax",
-    org: "Forward School",
-    period: "2024",
-    points: ["Built a solution with a team under hackathon time pressure."],
+    org: "Forward College of Technology & Future Skills",
+    period: "Sep 2024",
+    points: [
+      "Built a solution for solving transpotation issues with a team under hackathon 24 hours time pressure.",
+      "Worked on designing mobile UI/UX using Frame0",
+    ],
   },
 ];
 
@@ -138,7 +147,7 @@ export const education = [
     title: "High School Diploma, Applied Software Engineering",
     school: "Forward College",
     period: "Mar 2024 - Mar 2025",
-    detail: "Grade 3.80 · MDEC-sponsored joint programme in Penang",
+    detail: "Grade 3.80 · MDEC-sponsored joint programme with Forward College",
   },
   {
     title: "SPM & Permata Pintar Junior Certificate",
@@ -148,14 +157,16 @@ export const education = [
   },
 ];
 
-// Short list of the biggest awards.
 export const highlights = [
+  {
+    title: "Dean's List Every Year (CGPA 3.67 and above)",
+    year: "2021 - 2025",
+  },
   {
     title:
       "Selected for the MDEC-sponsored Applied Software Engineering programme",
     year: "2024",
   },
-  { title: "Dean's List (CGPA 3.67 and above)", year: "2021 - 2025" },
   { title: "Certified Entry-Level Python Programmer (PCEP)", year: "2023" },
   {
     title: "STEM Invention & Innovation Competition, Silver Medal",

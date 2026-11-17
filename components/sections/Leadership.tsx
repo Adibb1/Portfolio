@@ -9,7 +9,7 @@ export function Leadership() {
     <Section
       id="leadership"
       title="Leadership"
-      subtitle="Roles where I took responsibility for people, money and events."
+      subtitle="Roles where I took responsibility for people."
     >
       <SimpleGrid columns={{ base: 1, md: 2 }} gap={5}>
         {leadership.map((l) => (

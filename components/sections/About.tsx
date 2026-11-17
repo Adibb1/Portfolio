@@ -22,22 +22,26 @@ export function About() {
             <Text
               key={p.slice(0, 30)}
               color="fg.muted"
-              fontSize="lg"
+              fontSize={{ base: "md", md: "lg" }}
               lineHeight="1.8"
             >
               {p}
             </Text>
           ))}
-          <Text color="fg.muted" fontSize="lg" lineHeight="1.8">
+          <Text
+            color="fg.muted"
+            fontSize={{ base: "md", md: "lg" }}
+            lineHeight="1.8"
+          >
             {about.closing}
           </Text>
-          <Box pt={2}>
+          {/* <Box pt={2}>
             <Button asChild variant="outline" colorPalette="teal">
               <a href={links.github} target="_blank" rel="noopener noreferrer">
                 <LuGithub /> github.com/Adibb1
               </a>
             </Button>
-          </Box>
+          </Box> */}
         </Stack>
 
         <Stack gap={5}>
@@ -51,7 +55,7 @@ export function About() {
               borderColor="border"
               bg="bg.subtle"
               rounded="xl"
-              p={5}
+              p={{ base: 4, md: 5 }}
             >
               <Text fontSize="sm" fontWeight="semibold" color="teal.500" mb={3}>
                 {group.label}
